@@ -13,7 +13,7 @@ public class HomePage extends WebPage {
 	@SpringBean
 	private MessageDao messageDao;
 
-	public HomePage(final PageParameters parameters) {
+	public HomePage() {
 		messageDao.saveMessage("Hello World");
 		add(new Label("message", messageDao.readMessage()));
 	}
