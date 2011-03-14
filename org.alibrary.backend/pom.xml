@@ -129,4 +129,13 @@
 		<hibernate.version>3.5.6-Final</hibernate.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>JBoss</id>
+			<name>The "public-jboss" repository group provides a combined view all JBoss community project artifacts</name>
+			<layout>default</layout>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+		</repository>
+	</repositories>
+
 </project>
