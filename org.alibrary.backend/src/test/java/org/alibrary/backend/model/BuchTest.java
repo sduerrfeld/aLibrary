@@ -176,6 +176,11 @@ public class BuchTest {
 			assertThat(constraintViolation.getPropertyPath().toString(), is("isbn"));
 		}
 	}
+	
+	@Test
+	public void testNothing() {
+		
+	}
 
 	private Buch createValidBuch() {
 		Buch buch = new Buch();
