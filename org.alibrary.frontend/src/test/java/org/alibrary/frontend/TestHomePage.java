@@ -25,6 +25,6 @@ public class TestHomePage
 		tester.assertRenderedPage(HomePage.class);
 
 		//assert rendered label component
-		tester.assertLabel("message", "If you see this message wicket is properly configured and running");
+		tester.assertLabel("message", "Hello World");
 	}
 }

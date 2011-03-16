@@ -17,12 +17,10 @@ import org.junit.Test;
 
 public class TestIsbnVariante2 {
 
-	private Buch buch;
 	private Validator validator;
 
 	@Before
 	public void setUp() {
-		buch = new Buch();
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		validator = factory.getValidator();
 	}
