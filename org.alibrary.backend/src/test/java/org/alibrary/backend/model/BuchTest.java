@@ -2,8 +2,8 @@ package org.alibrary.backend.model;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 import java.util.Set;
 
@@ -13,14 +13,9 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.groups.Default;
 
-import org.alibrary.backend.model.Buch;
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsNull;
 import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
-
-import sun.dc.pr.PathDasher;
 
 public class BuchTest {
 
