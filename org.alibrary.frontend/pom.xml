@@ -2,12 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.alibrary</groupId>
+
+	<parent>
+    	<groupId>org.alibrary</groupId>
+    	<artifactId>alibrary-parent</artifactId>
+   		<version>0.0.1-SNAPSHOT</version>
+  	</parent>
+
 	<artifactId>alibrary-frontend</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>alibrary</name>
-	<description></description>
+	<name>aLibrary Frontend</name>
 
 	<licenses>
 		<license>
@@ -18,7 +22,6 @@
 	</licenses>
 	
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
