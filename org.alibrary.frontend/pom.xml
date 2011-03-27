@@ -5,7 +5,7 @@
 
 	<parent>
     	<groupId>org.alibrary</groupId>
-    	<artifactId>alibrary-parent</artifactId>
+    	<artifactId>alibrary.parent</artifactId>
    		<version>0.0.1-SNAPSHOT</version>
   	</parent>
 

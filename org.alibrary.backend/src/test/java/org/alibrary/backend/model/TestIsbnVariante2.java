@@ -11,6 +11,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.groups.Default;
 
+import org.alibrary.backend.model.testsupport.ObjectMother;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,7 +30,7 @@ public class TestIsbnVariante2 {
 	public void isbnMussRegexEntsprechen() throws Exception {
 		String[] invalidIsbns = {"abc", "ISBN 9-87654321-2" ,"9-87654321-23"};
 		for (String invalidIsbn : invalidIsbns) {
-			Buch buch = createValidBuch();
+			Buch buch = ObjectMother.createValidBuch();
 			buch.setISBN(invalidIsbn);
 			
 			Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -38,14 +39,5 @@ public class TestIsbnVariante2 {
 			ConstraintViolation<Buch> constraintViolation = result.iterator().next();
 			assertThat(constraintViolation.getPropertyPath().toString(), is("isbn"));
 		}
-	}
-	
-	private Buch createValidBuch() {
-		Buch buch = new Buch();
-		buch.setISBN("ISBN 0 93028 923 4");
-		buch.setTitel("Ein Buch");
-		buch.setMarkierung(new Markierung());
-		buch.setAusleihstatus(new Ausleihstatus());
-		return buch;
 	}	
 }

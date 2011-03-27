@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>org.alibrary</groupId>
-		<artifactId>alibrary-parent</artifactId>
+		<artifactId>alibrary.parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
@@ -50,13 +50,11 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -67,11 +65,21 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time-hibernate</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 		<dependency>
@@ -95,6 +103,12 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

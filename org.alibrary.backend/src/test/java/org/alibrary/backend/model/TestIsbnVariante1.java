@@ -11,6 +11,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.groups.Default;
 
+import org.alibrary.backend.model.testsupport.ObjectMother;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +27,7 @@ public class TestIsbnVariante1 {
 
 	@Test
 	public void isbnMussRegexEntsprechen1() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setISBN("abc");
 
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch,
@@ -40,7 +41,7 @@ public class TestIsbnVariante1 {
 
 	@Test
 	public void isbnMussRegexEntspreche2() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setISBN("ISBN 9-87654321-2");
 
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch,
@@ -54,7 +55,7 @@ public class TestIsbnVariante1 {
 
 	@Test
 	public void isbnMussRegexEntspreche3() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setISBN("9-87654321-23");
 
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch,
@@ -64,14 +65,5 @@ public class TestIsbnVariante1 {
 		ConstraintViolation<Buch> constraintViolation = result.iterator()
 				.next();
 		assertThat(constraintViolation.getPropertyPath().toString(), is("isbn"));
-	}
-
-	private Buch createValidBuch() {
-		Buch buch = new Buch();
-		buch.setISBN("ISBN 0 93028 923 4");
-		buch.setTitel("Ein Buch");
-		buch.setMarkierung(new Markierung());
-		buch.setAusleihstatus(new Ausleihstatus());
-		return buch;
 	}
 }

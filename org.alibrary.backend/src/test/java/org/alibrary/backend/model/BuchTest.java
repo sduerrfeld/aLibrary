@@ -12,6 +12,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.groups.Default;
 
+import org.alibrary.backend.model.testsupport.ObjectMother;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,14 +35,14 @@ public class BuchTest {
 	
 	@Test
 	public void testValidBuch() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
 		assertThat(result.isEmpty(), is(true));
 	}
 	
 	@Test
 	public void isbnDarfNichtNullSein() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setISBN(null);
 		
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -54,7 +55,7 @@ public class BuchTest {
 	
 	@Test
 	public void titelDarfNichtNullSein() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setTitel(null);
 		
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -67,7 +68,7 @@ public class BuchTest {
 	
 	@Test
 	public void titelDarfNichtLeerSein() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setTitel("");
 		
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -80,7 +81,7 @@ public class BuchTest {
 	
 	@Test
 	public void markierungDarfNichtNullSein() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setMarkierung(null);
 		
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -93,7 +94,7 @@ public class BuchTest {
 	
 	@Test
 	public void ausleihstatusDarfNichtNullSein() throws Exception {
-		Buch buch = createValidBuch();
+		Buch buch = ObjectMother.createValidBuch();
 		buch.setAusleihstatus(null);
 		
 		Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -108,7 +109,7 @@ public class BuchTest {
 	public void isbnMussRegexEntsprechen() throws Exception {
 		String[] invalidIsbns = {"abc", "ISBN 9-87654321-2"};
 		for (String invalidIsbn : invalidIsbns) {
-			Buch buch = createValidBuch();
+			Buch buch = ObjectMother.createValidBuch();
 			buch.setISBN(invalidIsbn);
 			
 			Set<ConstraintViolation<Buch>> result = validator.validate(buch, Default.class);
@@ -122,14 +123,5 @@ public class BuchTest {
 	@Test
 	public void testNothing() {
 		
-	}
-
-	private Buch createValidBuch() {
-		Buch buch = new Buch();
-		buch.setISBN("ISBN 0 93028 923 4");
-		buch.setTitel("Ein Buch");
-		buch.setMarkierung(new Markierung());
-		buch.setAusleihstatus(new Ausleihstatus());
-		return buch;
 	}
 }
