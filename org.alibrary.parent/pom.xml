@@ -9,6 +9,11 @@
 
 	<name>alibrary-parent</name>
 
+	<modules>
+		<module>../org.alibrary.backend</module>
+		<module>../org.alibrary.frontend</module>
+	</modules>
+
 	<build>
 		<plugins>
 			<plugin>
