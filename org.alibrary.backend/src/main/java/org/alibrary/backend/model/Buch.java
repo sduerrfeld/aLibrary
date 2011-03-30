@@ -1,5 +1,7 @@
 package org.alibrary.backend.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +14,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.LocalDate;
 
 @Entity
-public class Buch {
+public class Buch implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
