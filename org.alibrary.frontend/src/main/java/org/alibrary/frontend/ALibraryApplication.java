@@ -1,6 +1,6 @@
 package org.alibrary.frontend;
 
-import org.alibrary.frontend.pages.HomePage;
+import org.alibrary.frontend.pages.IsbnEingabePage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 
@@ -11,8 +11,8 @@ public class ALibraryApplication extends WebApplication {
 		addComponentInstantiationListener(new SpringComponentInjector(this));
 	}
 
-	public Class<HomePage> getHomePage() {
-		return HomePage.class;
+	public Class<IsbnEingabePage> getHomePage() {
+		return IsbnEingabePage.class;
 	}
 
 }
