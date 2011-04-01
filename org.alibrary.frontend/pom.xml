@@ -7,6 +7,7 @@
     	<groupId>org.alibrary</groupId>
     	<artifactId>alibrary.parent</artifactId>
    		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../org.alibrary.parent</relativePath>
   	</parent>
 
 	<artifactId>alibrary-frontend</artifactId>
