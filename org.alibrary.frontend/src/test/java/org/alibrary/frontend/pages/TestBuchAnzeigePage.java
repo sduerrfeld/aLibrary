@@ -9,11 +9,13 @@ import static org.alibrary.frontend.pages.BuchAnzeigePage.TITEL_AUSGABE_ID;
 import static org.alibrary.frontend.pages.BuchAnzeigePage.TITEL_LABEL_ID;
 import static org.alibrary.frontend.pages.IsbnEingabePage.ISBN_PARAMETER;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import org.alibrary.backend.dao.BuchDao;
 import org.alibrary.backend.model.Buch;
+import org.apache.commons.lang.StringUtils;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.apache.wicket.spring.test.ApplicationContextMock;
@@ -64,6 +66,9 @@ public class TestBuchAnzeigePage extends WicketTester {
 		ArgumentCaptor<Buch> captor = ArgumentCaptor.forClass(Buch.class);
 		verify(buchDaoMock).speichereBuch(captor.capture());
 		assertEquals("irgendwas", captor.getValue().getISBN());
+		assertFalse(StringUtils.isEmpty(captor.getValue().getMarkierung()));
+		assertFalse(StringUtils.isEmpty(captor.getValue().getTitel()));
+		assertFalse(StringUtils.isEmpty(captor.getValue().getAusleihstatus()));
 	}
 
 }

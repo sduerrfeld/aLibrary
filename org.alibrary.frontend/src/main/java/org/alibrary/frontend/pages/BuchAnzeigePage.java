@@ -40,6 +40,9 @@ public class BuchAnzeigePage extends WebPage {
 			protected void onSubmit() {
 				Buch buch = new Buch();
 				buch.setISBN(isbn.getObject());
+				buch.setMarkierung("Dummy_Markierung");
+				buch.setTitel("Dummy_Titel");
+				buch.setAusleihstatus("Dummy_Status");
 				buchDao.speichereBuch(buch );
 			}
 		};
