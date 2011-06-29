@@ -1,7 +1,5 @@
 package org.alibrary.frontend.pages;
 
-import static org.alibrary.frontend.pages.BuchAnzeigePage.ISBN_PARAMETER;
-
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
@@ -11,6 +9,7 @@ import org.apache.wicket.model.Model;
 
 public class IsbnEingabePage extends WebPage {
 
+	static final String ISBN_PARAMETER = "isbn";
 	static final String ISBN_FIELD_ID = "isbnField";
 	static final String ISBN_EINGABE_FORM_ID = "isbnEingabeForm";
 	private static final long serialVersionUID = 1L;
